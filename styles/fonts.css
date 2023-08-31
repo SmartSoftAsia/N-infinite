@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "SansSerifRegular";
+  src: url("/fonts/SansSerif-Regular.woff2") format("woff2"),
+    url("/fonts/SansSerif-Regular.tff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SansSerifThin";
+  src: url("/fonts/SansSerif-Thin.woff2") format("woff2"),
+    url("/fonts/SansSerif-Thin.tff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SansSerifBold";
+  src: url("/fonts/SansSerif-Bold.woff2") format("woff2"),
+    url("/fonts/SansSerif-Bold.tff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SansSerifExtraBold";
+  src: url("/fonts/SansSerif-Extra-Bold.woff2") format("woff2"),
+    url("/fonts/SansSerif-Extra-Bold.tff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SansSerifLight";
+  src: url("/fonts/SansSerif-Light.woff2") format("woff2"),
+    url("/fonts/SansSerif-Light.tff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.custom-text-regular {
+  font-family: "SansSerifRegular", sans-serif;
+}
+.custom-text-thin {
+  font-family: "SansSerifThin", sans-serif;
+}
+.custom-text-bold {
+  font-family: "SansSerifBold", sans-serif;
+}
+.custom-text-extra-bold {
+  font-family: "SansSerifExtraBold", sans-serif;
+}
+.custom-text-light {
+  font-family: "SansSerifLight", sans-serif;
+}
