@@ -29,6 +29,7 @@ module.exports = withMT({
       colors: {
         "n-dark-grey": "#2F2F2F",
         "n-yellow": "#FBBF24",
+        "n-gray": "#7C7C7C",
       },
       flex: {
         "1-auto": "1 0 auto",

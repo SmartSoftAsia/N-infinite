@@ -21,6 +21,28 @@ type NavBarItemProps = {
 const NavBar = ({ onToggle, isOpen }: NavBarProps) => {
   const { i18n } = useTranslation();
   const { t } = useTranslation("static");
+
+  const scrollToHowItWorks = (e: any) => {
+    e.preventDefault();
+    const element = document.getElementById("how-it-work");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollToOurClient = (e: any) => {
+    e.preventDefault();
+    const element = document.getElementById("our-client");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollToContactUs = (e: any) => {
+    e.preventDefault();
+    const element = document.getElementById("contact-us");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
       <nav className="fixed top-0 z-50 w-full bg-white shadow-bottom">
@@ -42,17 +64,19 @@ const NavBar = ({ onToggle, isOpen }: NavBarProps) => {
               <Link
                 href={"/"}
                 className="items-center hidden pr-8 xs:hidden 2xs:hidden 3xs:hidden 4xs:hidden 5xs:hidden 6xs:hidden 7xs:hidden md:flex lg-max:flex lg:flex xl:flex 2xl:flex"
+                onClick={scrollToHowItWorks}
               >
                 {t("sidebar.how_it_works")}
               </Link>
               <Link
                 href={"/"}
                 className="items-center hidden pr-8 xs:hidden 2xs:hidden 3xs:hidden 4xs:hidden 5xs:hidden 6xs:hidden 7xs:hidden md:flex lg-max:flex lg:flex xl:flex 2xl:flex"
+                onClick={scrollToOurClient}
               >
                 {t("sidebar.our_clients")}
               </Link>
               <Link
-                href={"/"}
+                href={"/about-us"}
                 className="items-center hidden pr-8 xs:hidden 2xs:hidden 3xs:hidden 4xs:hidden 5xs:hidden 6xs:hidden 7xs:hidden md:flex lg-max:flex lg:flex xl:flex 2xl:flex"
               >
                 {t("sidebar.about_us")}
@@ -60,6 +84,7 @@ const NavBar = ({ onToggle, isOpen }: NavBarProps) => {
               <Link
                 href={"/"}
                 className="items-center hidden pr-8 xs:hidden 2xs:hidden 3xs:hidden 4xs:hidden 5xs:hidden 6xs:hidden 7xs:hidden md:flex lg-max:flex lg:flex xl:flex 2xl:flex"
+                onClick={scrollToContactUs}
               >
                 {t("sidebar.contact_us")}
               </Link>
