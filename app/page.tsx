@@ -14,22 +14,13 @@ import img3 from "@public/images/image_3.png";
 import Image from "next/image";
 
 import { useState } from "react";
-import {
-  BuildingOffice2Icon,
-  ChatBubbleLeftEllipsisIcon,
-  CloudIcon,
-  Cog8ToothIcon,
-  StarIcon,
-  UserGroupIcon,
-  UserIcon,
-} from "@heroicons/react/24/solid";
 import NavBar from "@components/NavBar";
 import SideBar from "@components/SideBar";
 import { useTranslation } from "@shared/translations/i18n-client";
 import CountrySelector from "@components/SelectCountry";
 import { button } from "@material-tailwind/react";
 import Footer from "@components/Footer";
-
+import imageLoader from "@utils/loader.js";
 export default function Home() {
   const { t } = useTranslation("static");
 
@@ -37,6 +28,7 @@ export default function Home() {
   const toggleMobileMenu = () => {
     setIsMobileOpened((opened) => !opened);
   };
+
   return (
     <main>
       <div>
@@ -189,22 +181,24 @@ export default function Home() {
               </div>
               <div className="basis-6/12">
                 <Image
+                  loader={imageLoader}
                   src={MenuImg.src}
                   alt="menu selection"
                   width={200}
                   height={200}
-                  className="mx-auto w-fit 2xl:pt-0 xl:pt-0 lg:pt-0 lg-max:pt-4 2xs:pt-4 3xs:pt-4 4xs:pt-4 5xs:pt-4 6xs:pt-4 7xs:pt-4 xs:pt-4"
+                  className="w-2/4 mx-auto 2xl:pt-0 xl:pt-0 lg:pt-0 lg-max:pt-4 2xs:pt-4 3xs:pt-4 4xs:pt-4 5xs:pt-4 6xs:pt-4 7xs:pt-4 xs:pt-4"
                 />
               </div>
             </div>
             <div className="flex justify-between pt-8 2xl:flex xl:flex lg:flex lg-max:flex-col-reverse 2xs:flex-col-reverse 3xs:flex-col-reverse 4xs:flex-col-reverse 5xs:flex-col-reverse 6xs:flex-col-reverse 7xs:flex-col-reverse xs:flex-col-reverse">
               <div className="basis-6/12">
                 <Image
+                  loader={imageLoader}
                   src={PricingMenuImg.src}
                   alt="menu pricing"
                   width={200}
                   height={200}
-                  className="mx-auto w-fit 2xl:pt-0 xl:pt-0 lg:pt-0 lg-max:pt-4 2xs:pt-4 3xs:pt-4 4xs:pt-4 5xs:pt-4 6xs:pt-4 7xs:pt-4 xs:pt-4"
+                  className="w-2/4 mx-auto 2xl:pt-0 xl:pt-0 lg:pt-0 lg-max:pt-4 2xs:pt-4 3xs:pt-4 4xs:pt-4 5xs:pt-4 6xs:pt-4 7xs:pt-4 xs:pt-4"
                 />
               </div>
               <div className="basis-6/12">
@@ -237,22 +231,24 @@ export default function Home() {
               </div>
               <div className="basis-6/12">
                 <Image
+                  loader={imageLoader}
                   src={PromotionMenuImg.src}
                   alt="menu selection"
                   width={200}
                   height={200}
-                  className="mx-auto w-fit 2xl:pt-0 xl:pt-0 lg:pt-0 lg-max:pt-4 2xs:pt-4 3xs:pt-4 4xs:pt-4 5xs:pt-4 6xs:pt-4 7xs:pt-4 xs:pt-4"
+                  className="w-2/4 mx-auto 2xl:pt-0 xl:pt-0 lg:pt-0 lg-max:pt-4 2xs:pt-4 3xs:pt-4 4xs:pt-4 5xs:pt-4 6xs:pt-4 7xs:pt-4 xs:pt-4"
                 />
               </div>
             </div>
             <div className="flex justify-between pt-8 2xl:flex xl:flex lg:flex lg-max:flex-col-reverse 2xs:flex-col-reverse 3xs:flex-col-reverse 4xs:flex-col-reverse 5xs:flex-col-reverse 6xs:flex-col-reverse 7xs:flex-col-reverse xs:flex-col-reverse">
               <div className="basis-6/12">
                 <Image
+                  loader={imageLoader}
                   src={AdsMenuImg.src}
                   alt="menu pricing"
                   width={200}
                   height={200}
-                  className="mx-auto w-fit 2xl:pt-0 xl:pt-0 lg:pt-0 lg-max:pt-4 2xs:pt-4 3xs:pt-4 4xs:pt-4 5xs:pt-4 6xs:pt-4 7xs:pt-4 xs:pt-4"
+                  className="w-2/4 mx-auto 2xl:pt-0 xl:pt-0 lg:pt-0 lg-max:pt-4 2xs:pt-4 3xs:pt-4 4xs:pt-4 5xs:pt-4 6xs:pt-4 7xs:pt-4 xs:pt-4"
                 />
               </div>
               <div className="basis-6/12">
@@ -270,11 +266,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="h-auto max-w-full mt-8 border-none mx-autorelative bg-n-dark-grey xs:px-8 2xs:px-8 3xs:px-8 4xs:px-8 5xs:px-8 6xs:px-8 7xs:px-8 2xl:px-40 xl:px-40 lg:px-40 md:px-40 lg-max:px-40">
-            <div
-              className="justify-between gap-8 py-8 2xl:flex xl:flex lg:flex lg-max:flex-col 2xs:flex-col 3xs:flex-col 4xs:flex-col 5xs:flex-col 6xs:flex-col 7xs:flex-col xs:flex-col"
-              id="contact-us"
-            >
+          <div
+            className="h-auto max-w-full mt-8 border-none mx-autorelative bg-n-dark-grey xs:px-8 2xs:px-8 3xs:px-8 4xs:px-8 5xs:px-8 6xs:px-8 7xs:px-8 2xl:px-40 xl:px-40 lg:px-40 md:px-40 lg-max:px-40"
+            id="contact-us"
+          >
+            <div className="justify-between gap-8 py-8 2xl:flex xl:flex lg:flex lg-max:flex-col 2xs:flex-col 3xs:flex-col 4xs:flex-col 5xs:flex-col 6xs:flex-col 7xs:flex-col xs:flex-col">
               <div className="basis-6/12">
                 <h3 className="text-3xl text-center text-white custom-text-bold">
                   {t("ready_to_get_started")}
@@ -360,7 +356,7 @@ export default function Home() {
                       type="text"
                       id="company"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 "
-                      placeholder="ssa"
+                      placeholder="Company name"
                       required
                     ></input>
                   </div>

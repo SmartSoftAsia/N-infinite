@@ -1,6 +1,7 @@
 "use client";
 
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { useTranslation } from "@shared/translations/i18n-client";
 import infiniteLogo from "@public/images/infinite-logo.png";
@@ -21,26 +22,32 @@ type NavBarItemProps = {
 const NavBar = ({ onToggle, isOpen }: NavBarProps) => {
   const { i18n } = useTranslation();
   const { t } = useTranslation("static");
-
-  const scrollToHowItWorks = (e: any) => {
+  const router = useRouter();
+  const pathName = usePathname();
+  const scrollToElement = async (e: any, targetElementId: string) => {
     e.preventDefault();
-    const element = document.getElementById("how-it-work");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-  const scrollToOurClient = (e: any) => {
-    e.preventDefault();
-    const element = document.getElementById("our-client");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-  const scrollToContactUs = (e: any) => {
-    e.preventDefault();
-    const element = document.getElementById("contact-us");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById(targetElementId);
+    console.log(pathName);
+    if (pathName === "/") {
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "end",
+        });
+      }
+    } else {
+      await router.push("/");
+      setTimeout(() => {
+        const element = document.getElementById(targetElementId);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "end",
+          });
+        }
+      }, 100);
     }
   };
   return (
@@ -62,16 +69,22 @@ const NavBar = ({ onToggle, isOpen }: NavBarProps) => {
           <div className="flex font-medium custom-text-light text-n-dark-grey">
             <>
               <Link
-                href={"/"}
+                href="/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToElement(e, "how-it-work");
+                }}
                 className="items-center hidden pr-8 xs:hidden 2xs:hidden 3xs:hidden 4xs:hidden 5xs:hidden 6xs:hidden 7xs:hidden md:flex lg-max:flex lg:flex xl:flex 2xl:flex"
-                onClick={scrollToHowItWorks}
               >
                 {t("sidebar.how_it_works")}
               </Link>
               <Link
                 href={"/"}
                 className="items-center hidden pr-8 xs:hidden 2xs:hidden 3xs:hidden 4xs:hidden 5xs:hidden 6xs:hidden 7xs:hidden md:flex lg-max:flex lg:flex xl:flex 2xl:flex"
-                onClick={scrollToOurClient}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToElement(e, "our-client");
+                }}
               >
                 {t("sidebar.our_clients")}
               </Link>
@@ -84,7 +97,10 @@ const NavBar = ({ onToggle, isOpen }: NavBarProps) => {
               <Link
                 href={"/"}
                 className="items-center hidden pr-8 xs:hidden 2xs:hidden 3xs:hidden 4xs:hidden 5xs:hidden 6xs:hidden 7xs:hidden md:flex lg-max:flex lg:flex xl:flex 2xl:flex"
-                onClick={scrollToContactUs}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToElement(e, "contact-us");
+                }}
               >
                 {t("sidebar.contact_us")}
               </Link>

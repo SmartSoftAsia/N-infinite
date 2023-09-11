@@ -30,8 +30,8 @@
       "@lib-utils/*": ["./lib/web/utils/*"],
       "@components/*": ["./components/*"],
       "@styles/*": ["./styles/*"],
-      "@public/*": ["./public/*"]
-
+      "@public/*": ["./public/*"],
+      "@utils/*": ["./utils/*"]
     }
   },
   "include": [

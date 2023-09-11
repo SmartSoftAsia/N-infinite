@@ -5,6 +5,7 @@ import img1 from "@public/images/about_us1.png";
 import img2 from "@public/images/about_us2.png";
 import img3 from "@public/images/about_us3.png";
 import Image from "next/image";
+import imageLoader from "@utils/loader.js";
 
 import { useState } from "react";
 import {
@@ -59,6 +60,7 @@ export default function About() {
               </div>
               <div className="basis-6/12">
                 <Image
+                  loader={imageLoader}
                   src={img1.src}
                   alt="menu selection"
                   width={200}
@@ -70,6 +72,7 @@ export default function About() {
             <div className="flex justify-between pt-8 2xl:flex xl:flex lg:flex lg-max:flex-col-reverse 2xs:flex-col-reverse 3xs:flex-col-reverse 4xs:flex-col-reverse 5xs:flex-col-reverse 6xs:flex-col-reverse 7xs:flex-col-reverse xs:flex-col-reverse">
               <div className="basis-6/12">
                 <Image
+                  loader={imageLoader}
                   src={img2.src}
                   alt="menu pricing"
                   width={200}
@@ -101,6 +104,7 @@ export default function About() {
               </div>
               <div className="basis-6/12">
                 <Image
+                  loader={imageLoader}
                   src={img3.src}
                   alt="menu selection"
                   width={200}
